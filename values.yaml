@@ -16,6 +16,12 @@ fullnameOverride: ""
 
 podAnnotations: {}
 
+autoscaling:
+  enabled: false
+
+serviceAccount:
+  create: false
+
 podSecurityContext:
   fsGroup: 2000
 
