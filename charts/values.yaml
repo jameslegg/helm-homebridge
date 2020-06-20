@@ -40,6 +40,7 @@ securityContext:
     - ALL
   readOnlyRootFilesystem: false
   runAsNonRoot: false
+  allowPrivilegeEscalation: true
   #runAsUser: 1000
 
 service:
