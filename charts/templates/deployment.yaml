@@ -34,7 +34,11 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-            {{- range .Values.env }}
+            - names: TERMINATE_ON_ERROR
+              value: 1
+          {{- if .Values.extraEnvs }}
+{{ toYaml .Values.extraEnvs | indent 12}}
+          {{- end }}
           ports:
             - name: http
               containerPort: 8090
