@@ -34,7 +34,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-            - names: TERMINATE_ON_ERROR
+            - name: TERMINATE_ON_ERROR
               value: 1
           {{- if .Values.extraEnvs }}
 {{ toYaml .Values.extraEnvs | indent 12}}
