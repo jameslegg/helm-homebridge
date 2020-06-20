@@ -36,9 +36,9 @@ podSecurityContext:
   fsGroup: 2000
 
 securityContext:
-  capabilities:
-    drop:
-    - ALL
+    #capabilities:
+    #cadrop:
+    #ca- ALL
   readOnlyRootFilesystem: false
   runAsNonRoot: false
   allowPrivilegeEscalation: true
