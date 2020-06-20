@@ -42,6 +42,7 @@ securityContext:
   readOnlyRootFilesystem: false
   runAsNonRoot: false
   allowPrivilegeEscalation: true
+  hostNetwork: true
   #runAsUser: 1000
 
 service:
