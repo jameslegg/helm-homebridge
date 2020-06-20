@@ -46,7 +46,7 @@ securityContext:
 
 service:
   targetPort: 8080
-  nodePort: 8090
+  nodePort: 30080
 
 ingress:
   enabled: false
