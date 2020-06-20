@@ -35,7 +35,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: TERMINATE_ON_ERROR
-              value: 1
+              value: "1"
           {{- if .Values.extraEnvs }}
 {{ toYaml .Values.extraEnvs | indent 12}}
           {{- end }}
