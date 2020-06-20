@@ -22,6 +22,15 @@ autoscaling:
 serviceAccount:
   create: false
 
+env:
+  - name: "PUID"
+    value: "1000"
+  - name: "PGID"
+    value: "1000"
+  - name: "HOMEBRIDGE_CONFIG_UI"
+    value: "1"
+  - name: "HOMEBRIDGE_CONFIG_UI_PORT"
+    value: "8080"
 podSecurityContext:
   fsGroup: 2000
 
