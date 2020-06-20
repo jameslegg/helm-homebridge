@@ -4,7 +4,7 @@ metadata:
   name: homebridge
   namespace: {{ $.Values.namespace }}
 spec:
-  type: nodePort
+  type: NodePort
   selector:
     app: homebridge
   ports:
