@@ -30,7 +30,7 @@ extraEnvs:
  - name: HOMEBRIDGE_CONFIG_UI
    value: "1"
  - name: HOMEBRIDGE_CONFIG_UI_PORT
-   value: "8080"
+   value: "8090"
 
 podSecurityContext:
   fsGroup: 2000
@@ -45,7 +45,7 @@ securityContext:
   #runAsUser: 1000
 
 service:
-  targetPort: 8080
+  targetPort: 8090
   nodePort: 30080
 
 ingress:

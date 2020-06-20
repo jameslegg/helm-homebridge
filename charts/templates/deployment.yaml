@@ -42,16 +42,16 @@ spec:
           {{- end }}
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: {{ .Values.service.targetPort }}
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /
-              port: 8080
+              port: {{ .Values.service.targetPort }}
           readinessProbe:
             httpGet:
               path: /
-              port: 8080
+              port: {{ .Values.service.targetPort }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
