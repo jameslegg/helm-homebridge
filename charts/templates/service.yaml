@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: homebridge
+  namespace: {{ $.Values.namespace }}
+spec:
+  type: nodePort
+  selector:
+    app: homebridge
+  ports:
+    - port: {{ .Values.service.targetPort }}
+      nodePort: {{ .Values.service.nodePort }}
+      protocol: TCP

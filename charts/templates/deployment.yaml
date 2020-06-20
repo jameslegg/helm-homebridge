@@ -20,6 +20,7 @@ spec:
       labels:
         {{- include "homebridge.selectorLabels" . | nindent 8 }}
     spec:
+      hostNetwork: true
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -37,7 +38,7 @@ spec:
             - name: TERMINATE_ON_ERROR
               value: "1"
           {{- if .Values.extraEnvs }}
-{{ toYaml .Values.extraEnvs | indent 12}}
+            {{- toYaml .Values.extraEnvs | nindent 12 }}
           {{- end }}
           ports:
             - name: http

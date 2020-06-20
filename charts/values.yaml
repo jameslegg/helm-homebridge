@@ -42,12 +42,11 @@ securityContext:
   readOnlyRootFilesystem: false
   runAsNonRoot: false
   allowPrivilegeEscalation: true
-  hostNetwork: true
   #runAsUser: 1000
 
 service:
-  type: ClusterIP
-  port: 8080
+  targetPort: 8080
+  nodePort: 8090
 
 ingress:
   enabled: false
