@@ -20,6 +20,10 @@ spec:
       labels:
         {{- include "homebridge.selectorLabels" . | nindent 8 }}
     spec:
+      volumes:
+      - name: homebridge
+        persistentVolumeClaim:
+          claimName: homebridge
       hostNetwork: true
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -30,6 +34,9 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
+          volumeMounts:
+            - mountPath: "/homebridge"
+              name: homebridge
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
