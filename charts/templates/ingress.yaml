@@ -11,5 +11,6 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: homebridge
-              servicePort: {{ .Values.service.port }}
+              service:
+                name: homebridge
+                port: {{ .Values.service.port }}
