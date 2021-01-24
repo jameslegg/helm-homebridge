@@ -5,7 +5,7 @@ metadata:
   namespace: {{ $.Values.namespaceOverride  }}
 spec:
   selector:
-    app: homebridge
+    app.kubernetes.io/instance: homebridge
   ports:
     - port: {{ .Values.service.port }}
       targetPort: {{ .Values.service.port }}
