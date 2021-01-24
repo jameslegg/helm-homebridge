@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "homebridge.fullname" . }}
-  namespace: {{ $.Values.namespace }}
+  namespace: {{ $.Values.namespaceOverride }}
   labels:
     {{- include "homebridge.labels" . | nindent 4 }}
 spec:
