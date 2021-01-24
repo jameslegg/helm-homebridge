@@ -13,4 +13,5 @@ spec:
             backend:
               service:
                 name: homebridge
-                port: {{ .Values.service.port }}
+                port:
+                  number: {{ .Values.service.port }}
