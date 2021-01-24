@@ -50,16 +50,16 @@ spec:
           {{- end }}
           ports:
             - name: http
-              containerPort: {{ .Values.service.targetPort }}
+              containerPort: {{ .Values.service.port }}
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /
-              port: {{ .Values.service.targetPort }}
+              port: {{ .Values.service.port }}
           readinessProbe:
             httpGet:
               path: /
-              port: {{ .Values.service.targetPort }}
+              port: {{ .Values.service.port }}
           startupProbe:
             httpGet:
               path: /
