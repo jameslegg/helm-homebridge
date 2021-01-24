@@ -1,0 +1,15 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: "homebridge"
+  namespace: {{ $.Values.namespace }}
+
+spec:
+  rules:
+    - host: {{ .Values.ingress.host }}
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: homebridge
+              servicePort: {{ .Values.service.nodePort }}
