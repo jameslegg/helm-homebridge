@@ -63,7 +63,7 @@ spec:
           startupProbe:
             httpGet:
               path: /
-              port: liveness-port
+              port: {{ .Values.service.port }}
             failureThreshold: 30
             periodSeconds: 10
           resources:
